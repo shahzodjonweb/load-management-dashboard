@@ -1,0 +1,10 @@
+<?xml version='1.0' encoding='utf-8' ?>
+<resources>
+    <string name="app_name">EZ SHIP</string>
+    <string name="title_activity_main">EZ SHIP</string>
+    <string name="package_name">com.ezship.app</string>
+    <string name="custom_url_scheme">com.ezship.app</string>
+    <string
+    name="server_client_id"
+  >1021835190205-pagkgp5e2me6doo0uh1bvfage6ck0qb1.apps.googleusercontent.com</string>
+</resources>

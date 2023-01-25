@@ -1,0 +1,12 @@
+#loadtype .v-btn__content{
+    justify-content: left!important;
+}
+.v-list-item__title, .v-list-item__subtitle {
+    white-space: normal!important;
+}
+.empty{
+    color: darkgray;
+    font-size: 22px;
+    text-align: center;
+    margin-top: 130px;
+}
