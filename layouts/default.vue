@@ -25,17 +25,6 @@
       <v-divider></v-divider>
 
       <v-list dense nav>
-        <v-list-item>
-          <v-btn
-            class="w-full mt-2 mb-5"
-            :loading="loading"
-            :disabled="loading"
-            color="secondary"
-            @click="createNewOrder"
-          >
-            <v-icon left> mdi-plus </v-icon> Create Order
-          </v-btn>
-        </v-list-item>
         <v-list-item
           active-class="pink--text"
           v-for="item in items"
@@ -92,26 +81,7 @@
         <nuxt-child :key="key"
       /></vue-pull-refresh>
     </v-main>
-    <v-card-text
-      class="bg-gray-100 relative h-0"
-      v-if="$route.name != 'neworder-id'"
-    >
-      <v-fab-transition>
-        <v-btn
-          :loading="loading"
-          :disabled="loading"
-          @click="createNewOrder"
-          color="secondary"
-          dark
-          fixed
-          bottom
-          right
-          fab
-        >
-          <v-icon>mdi-plus</v-icon>
-        </v-btn>
-      </v-fab-transition>
-    </v-card-text>
+
     <VuetifyToast ref="toast" />
   </v-app>
 </template>
@@ -135,12 +105,12 @@ export default {
       loading: false,
       selectedItem: 0,
       clipped: false,
-      drawer: false,
+      drawer: true,
       fixed: false,
       items: [
         {
-          icon: "mdi-apps",
-          title: "My Orders",
+          icon: "mdi-account-multiple",
+          title: "Customer",
           to: "/",
         },
         {
@@ -172,16 +142,6 @@ export default {
           icon: "mdi-clipboard-text-clock",
           title: "History",
           to: "/invoiced",
-        },
-        {
-          icon: "mdi-cog",
-          title: "Settings",
-          to: "/settings",
-        },
-        {
-          icon: "mdi-help-circle",
-          title: "Help",
-          to: "/help",
         },
       ],
       account: {

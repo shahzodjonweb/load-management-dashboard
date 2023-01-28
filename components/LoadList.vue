@@ -22,6 +22,7 @@
             <thead class="bg-gray-100">
               <tr>
                 <th class="!text-lg text-left">Date</th>
+                <th class="!text-lg text-left">Customer</th>
                 <th class="!text-lg text-center">Pickup</th>
                 <th class="!text-lg text-left"></th>
                 <th class="!text-lg text-center">Delivery</th>
@@ -41,6 +42,16 @@
               >
                 <td>
                   <div>{{ item.created_at }}</div>
+                </td>
+                <td>
+                  <div>
+                    <div class="font-medium" v-if="item.owner">
+                      {{ item.owner.name }}
+                    </div>
+                    <div class="font-medium text-red-500" v-else>
+                      Deleted Customer
+                    </div>
+                  </div>
                 </td>
                 <td>
                   <div
@@ -105,15 +116,6 @@
                 </td>
                 <td>
                   <div class="pt-5">
-                    <CounterOffer
-                      v-if="
-                        item.counter_price &&
-                        item.counter_price !== item.initial_price
-                      "
-                      :item="item"
-                      @accept="handleAcceptOffer"
-                      @reject="handleRejectOffer"
-                    />
                     <div class="text_lg text-green-600 table-data">
                       <span class="font-medium">Rate:</span>
                       <span> ${{ item.initial_price }}</span>

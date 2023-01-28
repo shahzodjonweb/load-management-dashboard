@@ -16,18 +16,7 @@
           <LoadStatus :status="item.status" />
         </div>
       </div>
-
-      <CounterOffer
-        v-if="item.counter_price && item.counter_price !== item.initial_price"
-        :item="item"
-        @accept="handleAcceptOffer"
-        @reject="handleRejectOffer"
-      />
-      <v-alert v-if="showPaymentAlert" dense type="info" class="my-2">
-        We have already
-        <strong>emailed</strong> invoice to your email address. Please remit
-        payment!
-      </v-alert>
+      <AdminLoadActions :data="item" />
       <div class="transform -translate-x-10">
         <v-timeline align-right dense>
           <v-timeline-item color="pink" small>

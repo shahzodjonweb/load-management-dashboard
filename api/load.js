@@ -2,7 +2,7 @@ import api from "@/http";
 
 export const getLoads = async (payload) => {
   const params = new URLSearchParams(payload).toString();
-  const data = await api.get(`/loads/?${params}`);
+  const data = await api.get(`admin/loads/?${params}`);
   return data;
 };
 
@@ -44,5 +44,25 @@ export const deleteUser = async () => {
 };
 export const updateLocation = async (id, payload) => {
   const data = await api.patch(`/location/${id}`, payload);
+  return data;
+};
+
+export const getCustomers = async () => {
+  const data = await api.get(`admin/customers`);
+  return data;
+};
+
+export const getCustomer = async (id) => {
+  const data = await api.get(`admin/customer/${id}`);
+  return data;
+};
+
+export const updateLoadStatus = async (id, payload) => {
+  const data = await api.patch(`admin/load/${id}/status`, payload);
+  return data;
+};
+
+export const updateLoadCounterRate = async (id, payload) => {
+  const data = await api.post(`admin/load/${id}/counter-rate`, payload);
   return data;
 };
